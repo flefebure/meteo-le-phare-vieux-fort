@@ -1,24 +1,110 @@
-<html>
-  <head>
-  </head>
-  <body>
-    <H1>La balise météo du phare de Vieux-Fort en Guadeloupe</H1>
-    Le sujet de monter une balise météo au phare est un marronnier qui revient depuis de nombreuses années, voire décennies !!!<br/>
-    Mais ce coup-ci, c'est fait !<br/>
-    Nous sommes André, Yves et Franck, 3 pratiquants de wingfoil réguliers (et plus si jeunes) du spot. Vous nous avez sans doutes croisés si vous fréquentez le lieu pour naviguer, plonger, sauter bronzer...<br/>
-    Secondés par Thierry, le frêre de Yves, nous sommes heureux de vous mettre a disposition cet équipement.<br/>
-    <br/>
-    Si vous voulez plus de détails sur comment cette station a été mise en oeuvre allez voir ici : <a  target='_blank' href='https://github.com/flefebure/meteo-le-phare-vieux-fort/blob/main/README.md'>le projet sur github</a><br/>
-    <br/>
-    La mise en oeuvre de ce projet a coûté un peu d'argent. C'est Thierry qui a avancé les fonds et il serait juste qu'il rentre dans ses frais.<br/> Par ailleurs la balise va "prendre cher" en haut de son perchoir et on aura probablement à la maintenir de temps en temps.<br/>
-    <br/>
-    Si vous voulez participer au projet, <a href='https://fr.tipeee.com/la-balise-meteo-du-phare-de-vieux-fort/' target='_blank'>une cagnotte Teepee est disponible</a> :  2€, 5€, 10€. Ce que vous voulez et pouvez. Cet argent nous permettre d'assurer la perennité du projet.<br/>
-    Les données de la balise est disponibles en ligne :<br/>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balise Météo - Vieux-Fort</title>
+  <style>
+    /* Reset de base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      color: #333;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0077b6;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    a {
+      color: #0096c7;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    p, ul {
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+
+    ul {
+      list-style: inside disc;
+      padding-left: 10px;
+    }
+
+    .container {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .owm-widget {
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>La balise météo du phare de Vieux-Fort en Guadeloupe</h1>
+
+    <p>Le sujet de monter une balise météo au phare est un marronnier qui revient depuis de nombreuses années, voire décennies !!!<br/>
+    Mais ce coup-ci, c'est fait !</p>
+
+    <p>Nous sommes André, Yves et Franck, trois pratiquants de wingfoil réguliers (et plus si jeunes) du spot. Vous nous avez sans doute croisés si vous fréquentez le lieu pour naviguer, plonger, sauter, bronzer...</p>
+
+    <p>Secondés par Thierry, le frère d'Yves, nous sommes heureux de vous mettre à disposition cet équipement.</p>
+
+    <p>Pour plus de détails sur comment cette station a été mise en œuvre, allez voir ici :
+      <a target="_blank" href="https://github.com/flefebure/meteo-le-phare-vieux-fort/blob/main/README.md">le projet sur GitHub</a>
+    </p>
+
+    <p>La mise en œuvre de ce projet a coûté un peu d'argent. C'est Thierry qui a avancé les fonds et il serait juste qu'il rentre dans ses frais. 
+    Par ailleurs, la balise va "prendre cher" en haut de son perchoir et nécessitera sûrement de la maintenance.</p>
+
+    <p>Si vous voulez participer au projet, <a href="https://fr.tipeee.com/la-balise-meteo-du-phare-de-vieux-fort/" target="_blank">une cagnotte Tipeee est disponible</a> : 2€, 5€, 10€... Ce que vous voulez et pouvez. 
+    Cet argent nous permettra d'assurer la pérennité du projet.</p>
+
+    <p>Les données de la balise sont disponibles en ligne :</p>
     <ul>
-      <li>Sur <a href='http://windguru.cz' target='_blank'>Windguru</a></li>
-      <li>Sur <a href='http://openwindmap.org' target='_blank'>OpenWindMap</a></li>
+      <li>Sur <a href="http://windguru.cz" target="_blank">Windguru</a></li>
+      <li>Sur <a href="http://openwindmap.org" target="_blank">OpenWindMap</a></li>
     </ul>
-    Bonne navigation !!!<br/>
+
+    <p>Bonne navigation !!!</p>
+
     <div 
       class="owm-widget"
       data-id="WB1399"
@@ -26,6 +112,13 @@
       data-show-2h="yes"
       data-show-24h="no">
     </div>  
-    <script src="https://www.openwindmap.org/js/widget-v1.js"></script>
-  </body>
+  </div>
+
+  <script src="https://www.openwindmap.org/js/widget-v1.js"></script>
+
+  <footer>
+    &copy; 2025 - Projet communautaire du phare de Vieux-Fort
+  </footer>
+
+</body>
 </html>
