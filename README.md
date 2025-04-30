@@ -46,3 +46,24 @@ La borne se compose des éléments suivants :
 
 ## Raccordement des éléments
 
+La girouette/anemometre Davis est cablée avec un connecteur RJ11 male. Le capteur de température est cablé avec une fiche Dupont 3pin male.
+
+La tension de sortie de la girouette varie entre 1V et 3V. La tension d'entrée du senseur ADC de l'emetteur doit varier entre 0.1V et 1.1V. Il faut donc mettre en oeuvre un pont de diode afin d'adapter le voltage
+
+Schema de branchement :
+
+Image du montage :
+
+Une prise RJ11 femelle est reliée a l'emetteur selon ce schema :
+* Connecteur 1 (couleur?) vers entrée ?? de l'emetteur
+* Connecteur 2 (couleur?) vers entrée ?? de l'emetteur
+* Connecteur 3 (couleur?) vers entrée ?? de l'emetteur
+* Connecteur 4 (couleur?) vers entrée ?? de l'emetteur
+
+Une prise Dupont 3pin femelle
+* Connecteur 1 (couleur?) vers entrée ?? de l'emetteur
+* Connecteur 2 (couleur?) vers entrée ?? de l'emetteur
+* Connecteur 3 (couleur?) vers entrée ?? de l'emetteur
+
+* 
+
