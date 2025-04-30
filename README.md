@@ -1,1 +1,43 @@
-# meteo-le-phare-vieux-fort
+# La balise météo du phare de vieux-Fort en Guadeloupe
+
+Nous sommes André, Yves, Franck et Noël, quatre pratiquants de wingfoil réguliers (et plus si jeunes) du spot. Vous nous avez sans doute croisés si vous fréquentez le lieu pour naviguer, plonger, sauter, bronzer, pique-niquer... dans cet endroit magnifique.
+
+Nous sommes à l'origine de l'installation de ce matériel qui a été mis en place avec une logique "DIY" et communautaire.
+
+Vous trouverez ici le processus d'installation de cette borne, afin que vous puissiez la répliquer le cas échéant.
+
+## Choix des technologies
+
+### Le matériel 
+
+La borne est destinée a être installée sur la galerie au sommet du phare de Vieux-Fort. Ainsi il est primordial qu'elle soit la plus robuste et la plus autonome possible. En effet toute intervention necessiera une synchronisation avec le personnel des phares & balises. Par ailleurs, la borne ne pourra pas puiser son énergie au niveau des installations électriques du phare, il faut donc qu'elle soit autonome en énergie.
+
+Basiquement, nous devons arbitrer entre 2 technologies :
+
+1. Un montage communiquant sur un réseau haut-débit (GSM 4G/5G)
+    * Avantages : Réseau autonome. Transmission des données à haute fréquence. Possibilité d'équiper la borne d'une caméra.
+    * Inconvénients : technologie gourmande en énergie. Nécessité de mettre en place une recharge solaire (relativement) conséquente.
+2. Un montage communiquant sur un réseau bas-débit (LORA ou SigFOX)
+    * Avantages : Très économe en énergie.
+    * Inconvénients : Nécessité d'integrer un point d'accès à Internet. Webcan pas possible.
+
+Le point de l'énergie étant prédominant, c'est sur une installation Lora que le choix s'est porté.
+
+### Le logiciel
+
+Les choix suivants s'offraient a nous :
+
+1. Mettre en place une stack complete "Internet Of Things" complete avec un broker MQTT et un site web autonome abonné à ce broker et chargé d'exposer les données météo
+2. Centraliser le traitement des données au niveau de la gateway Lora et s'appuyer sur un service à la "WindGuru" pour présenter les données.
+
+Par souçi de simplicité, c'est l'option 2. qui a été choisie. Néanmoins, afin d'assurer une certaines redondances, la borne sera intégrée à 2 servoices tiers : WindGuru et OpenWindMap
+
+# Installation du matériel
+
+La borne se compose des éléments suivants :
+
+| Item | Lien | Prix | Doc |
+|:---:|:---:|:---:|:---:|
+| Anémométre Davis 6410 |  [Fiche produit](https://www.davis-meteo.com/6410.php) | ??€ | [Manuel](https://www.meteo-shopping.com/fr/capteurs/109-anemometre-girouette-vantage-pro.html) |
+| Boitier émétteur Dragino SN50v3-LB/LS | [Fiche produit](https://www.dragino.com/products/lora-lorawan-end-node/item/260-sn50v3-lb-ls.html)| ??€ | [Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20LoRaWAN%20End%20Nodes/SN50v3-LB/)|
+| Gateway Lora Dragino LPS8v2 | [Fiche produit](https://www.dragino.com/products/lora-lorawan-gateway/item/228-lps8v2.html) | ??€ | [Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20LoRaWAN%20End%20Nodes/SN50v3-LB/) |
