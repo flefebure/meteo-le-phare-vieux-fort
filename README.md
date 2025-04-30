@@ -2,9 +2,9 @@
 
 Nous sommes André, Yves, Franck et Noël, quatre pratiquants de wingfoil réguliers (et plus si jeunes) du spot. Vous nous avez sans doute croisés si vous fréquentez le lieu pour naviguer, plonger, sauter, bronzer, pique-niquer... dans cet endroit magnifique.
 
-Nous sommes à l'origine de l'installation de ce matériel qui a été mis en place avec une logique "DIY" et communautaire.
+Nous sommes à l'origine de l'installation de ce matériel qui a été mis en place avec une approche "DIY" et communautaire.
 
-Vous trouverez ici le processus d'installation de cette borne, afin que vous puissiez la répliquer le cas échéant.
+Vous trouverez ici le processus d'installation de cette borne, afin que vous puissiez la répliquer. Nous vous y encourageons.
 
 ## Choix des technologies
 
