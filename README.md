@@ -32,7 +32,7 @@ Les choix suivants s'offraient a nous :
 
 Par souçi de simplicité, c'est l'option 2. qui a été choisie. Néanmoins, afin d'assurer une certaines redondances, la borne sera intégrée à 2 servoices tiers : WindGuru et OpenWindMap
 
-# Installation du matériel
+## Installation du matériel
 
 La borne se compose des éléments suivants :
 
@@ -44,11 +44,15 @@ La borne se compose des éléments suivants :
 | Capteur de température ?? | ? | ?? €| ?? |
 | Divers: Mât etc | ?| ??€ | ?? |
 
-## Raccordement des éléments
+### Raccordement des éléments
 
 La girouette/anemometre Davis est cablée avec un connecteur RJ11 male. Le capteur de température est cablé avec une fiche Dupont 3pin male.
 
 La tension de sortie de la girouette varie entre 1V et 3V. La tension d'entrée du senseur ADC de l'emetteur doit varier entre 0.1V et 1.1V. Il faut donc mettre en oeuvre un pont de diode afin d'adapter le voltage
+
+Principe :
+
+![Adaptation du voltage](medias/resistances.png)
 
 Schema de branchement :
 
@@ -65,5 +69,18 @@ Une prise Dupont 3pin femelle
 * Connecteur 2 (couleur?) vers entrée ?? de l'emetteur
 * Connecteur 3 (couleur?) vers entrée ?? de l'emetteur
 
-* 
+L'ensemble des connections est contenu dans un boitier imprimé en 3D dont voici le STL : 
+
+### Paramétrage de l'emetteur
+
+L'emetteur sera réglé sur son Mode 6
+
+Procédure AT ....
+
+### Appairage de la passerelle à l'emetteur
+
+## Mise en oeuvre logicielle
+
+
+ 
 
