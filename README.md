@@ -18,10 +18,10 @@ Basiquement, nous devons arbitrer entre 2 technologies :
     * Avantages : Réseau autonome. Transmission des données à haute fréquence. Possibilité d'équiper la borne d'une caméra.
     * Inconvénients : technologie gourmande en énergie. Nécessité de mettre en place une recharge solaire (relativement) conséquente.
 2. Un montage communiquant sur un réseau bas-débit (LORA ou SigFOX)
-    * Avantages : Très économe en énergie.
-    * Inconvénients : Nécessité d'integrer un point d'accès à Internet. Webcan pas possible.
+    * Avantages : Très économe en énergie, autonomie théorique de plusieurs années.
+    * Inconvénients : Nécessité d'integrer un point d'accès à Internet. Webcam pas ensisageable.
 
-Le point de l'énergie étant prédominant, c'est sur une installation Lora que le choix s'est porté.
+Le point de l'énergie étant prédominant, c'est sur une installation Lora que le choix s'est porté. C'est Yves, qui vit a quelques centaines de mètres à vol d'oiseau qui hebergera la passerelle Internet.
 
 ### Le logiciel
 
