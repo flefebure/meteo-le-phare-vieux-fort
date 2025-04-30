@@ -30,9 +30,9 @@ Les choix suivants s'offraient a nous :
 1. Mettre en place une stack complete "Internet Of Things" complete avec un broker MQTT et un site web autonome abonné à ce broker et chargé d'exposer les données météo
 2. Centraliser le traitement des données au niveau de la gateway Lora et s'appuyer sur un service à la "WindGuru" pour présenter les données.
 
-Par souçi de simplicité, c'est l'option 2. qui a été choisie. Néanmoins, afin d'assurer une certaines redondances, la borne sera intégrée à 2 servoices tiers : WindGuru et OpenWindMap
+Par souçi de simplicité, c'est l'option 2. qui a été choisie. Néanmoins, afin d'assurer une redondance, la borne sera intégrée à 2 services tiers : WindGuru et OpenWindMap
 
-## Installation du matériel
+## Raccordement des matériels
 
 La borne se compose des éléments suivants :
 
