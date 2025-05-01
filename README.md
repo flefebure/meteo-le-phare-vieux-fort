@@ -88,9 +88,65 @@ Procédure AT ....
 
 ## Mise en oeuvre logicielle
 
+### administration passerelle
+
 Une fois la passerelle Lora branchée sur un routeur internet, celui-ci lui affecte une IP DHCP, par exemple 192.168.1.20
 Un acces à http://192.168.1.20 permet d'afficher l'interface d'administration de la passerelle
 ![acceuil gateway](medias/home_gateway.png)
+
+Cette interface est surtout utilse pour vérifier que la paserelle est bien connectée à l'emetteur et peut accéder à Internet. La majeure partie du travail s'effectue via l'utilitaire "Chirpstack" qui est disponible a l'adresse http://192.168.1.20:8080
+
+### Chirpstack
+
+![acceuil Chirpstack](medias/home_chripstack.png)
+
+La premiere tache est de créer un template pour l'emetteur
+Voici notre configuration :
+
+![Template device](medias/device_template.png)
+
+Il faut ensuite définir un template, en effet l'emetteur Lora envoie ses données sous forme de trame hexadécimales, le codec va permettre de convertir la charge utile de ces trames en informations utilisables, par exemple la températur ou le nombre de rotations de l'anémomètre.
+Le wiki de Dragino vous propose un Codec à utiliser 
+
+[Codec](https://github.com/dragino/dragino-end-node-decoder/blob/main/SN50_v3-LB/SN50_v3-LB_ChirpstackV4_decode.txt)
+
+Collez simplement le contenu de ce fichier dans la partie Codec du template
+
+![Template device](medias/device_codec.png)
+
+Définissez ensuite une "Gateway". Vous aurez a renseigner le code EUI64 de l'emetteur qui figure sur son étiquette
+
+![New gateway](medias/new_gateway.png)
+
+Enfin vous aurez a définir une "application", qui fait le lien entre la gateway et le device
+
+![New app](medias/new_application.png)
+
+A ce stade, vous devez pouvoir visualiser les événements décodés qui proviennent de l'emetteur
+
+![Evénements](medias/events.png)
+
+Pour la suite de la configuration, j'aavsi prévu de sauvegarder les événements dans une base locale pour ensuite les traiter et les transmettre aux services tiers (Windguru) et pour cela j'ai essayé de mettre en oeuvre une "integration" de type "InfluxDB"
+
+![Chirpstack to Influx<DB](medias/chirpstack_influxdb.png)
+
+Néanmoins, je ne suis pas parvenu à faire fonctionner ce connecteur. La mise en oeuvre a par la suite été centralisée dans un 3e outil : Red-Note
+
+### InfluxDB
+
+La base conseillée par Dragino n'est pas installée par défaut. Pour l'installer, connectez-vous par SSH a l'IP de la passerelle puis executez les commandes suivantes :
+
+```
+curl https://repos.influxdata.com/influxdata-archive_compat.key | gpg --dearmor | sudo tee /usr/share/keyrings/influxdb-archive-keyring.gpg >/dev/null
+echo "deb [signed-by=/usr/share/keyrings/influxdb-archive-keyring.gpg] https://repos.influxdata.com/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+apt update && apt install influxdb
+systemclt enable influxdb
+systemctl start influxdb
+```
+Vérifiez ensuite que la base est demarrée avec la commande "systemctl status influxdb"
+
+
+
 
 
 
