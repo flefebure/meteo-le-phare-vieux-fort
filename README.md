@@ -89,7 +89,9 @@ Procédure AT ....
 ## Mise en oeuvre logicielle
 
 Une fois la passerelle Lora branchée sur un routeur internet, celui-ci lui affecte une IP DHCP, par exemple 192.168.1.20
-Un acces à http:192.168.1.20 permet d'afficher l'interface d'administration de la passerelle
+Un acces à http://192.168.1.20 permet d'afficher l'interface d'administration de la passerelle
+![acceuil gateway](medias/home_gateway.png)
+
 
 
  
