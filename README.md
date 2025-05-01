@@ -40,7 +40,7 @@ La borne se compose des éléments suivants :
 |:---:|:---:|:---:|:---:|
 | Anémométre Davis 6410 |  [Fiche produit](https://www.davis-meteo.com/6410.php) | ??€ | [Manuel](https://www.meteo-shopping.com/fr/capteurs/109-anemometre-girouette-vantage-pro.html) |
 | Boitier émétteur Dragino SN50v3-LB/LS | [Fiche produit](https://www.dragino.com/products/lora-lorawan-end-node/item/260-sn50v3-lb-ls.html)| ??€ | [Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20LoRaWAN%20End%20Nodes/SN50v3-LB/)|
-| Gateway Lora Dragino LPS8v2 | [Fiche produit](https://www.dragino.com/products/lora-lorawan-gateway/item/228-lps8v2.html) | ??€ | [Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20LoRaWAN%20End%20Nodes/SN50v3-LB/) |
+| Gateway Lora Dragino LPS8v2 | [Fiche produit](https://www.dragino.com/products/lora-lorawan-gateway/item/228-lps8v2.html) | ??€ | [Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20All%20Gateway%20models/HP0C/) |
 | Capteur de température ?? | ? | ?? €| ?? |
 | Divers: Mât etc | ?| ??€ | ?? |
 
@@ -50,6 +50,10 @@ La borne se compose des éléments suivants :
 
 La girouette/anemometre Davis est cablée avec un connecteur RJ11 male. Le capteur de température est cablé avec une fiche Dupont 3pin male.
 
+![girouette/anémomètre Davis](medias/davis.jpg)
+![emetteur Dragino](medias/emetteur.jpg)
+![Cablage et boitier imprimé en 3D](medias/boitier.jpg)
+
 La tension de sortie de la girouette varie entre 1V et 3V. La tension d'entrée du senseur ADC de l'emetteur doit varier entre 0.1V et 1.1V. Il faut donc mettre en oeuvre un pont de resistances afin d'adapter le voltage
 
 Principe :
@@ -58,7 +62,8 @@ Principe :
 
 Schema de branchement :
 
-Image du montage :
+Le montage de resistances est pris dans de la résine coulée dans un petit boitier
+
 
 Une prise RJ11 femelle est reliée a l'emetteur selon ce schema :
 * Connecteur 1 (couleur?) vers entrée ?? de l'emetteur
@@ -82,6 +87,9 @@ Procédure AT ....
 ### Appairage de la passerelle à l'emetteur
 
 ## Mise en oeuvre logicielle
+
+Une fois la passerelle Lora branchée sur un routeur internet, celui-ci lui affecte une IP DHCP, par exemple 192.168.1.20
+Un acces à http:192.168.1.20 permet d'afficher l'interface d'administration de la passerelle
 
 
  
