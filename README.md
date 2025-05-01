@@ -88,7 +88,7 @@ Cette interface est surtout utilse pour vérifier que la paserelle est bien conn
 
 ### Chirpstack
 
-![acceuil Chirpstack](medias/home_chripstack.png)
+![acceuil Chirpstack](medias/home_chirpstack.png)
 
 La premiere tache est de créer un template pour l'emetteur
 Voici notre configuration :
