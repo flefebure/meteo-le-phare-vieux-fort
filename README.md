@@ -62,21 +62,11 @@ Principe :
 
 Schema de branchement :
 
-Le montage de resistances est pris dans de la résine coulée dans un petit boitier
+![Schema de branchement](medias/cablage.png)
 
-
-Une prise RJ11 femelle est reliée a l'emetteur selon ce schema :
-* Connecteur 1 (couleur?) vers entrée ?? de l'emetteur
-* Connecteur 2 (couleur?) vers entrée ?? de l'emetteur
-* Connecteur 3 (couleur?) vers entrée ?? de l'emetteur
-* Connecteur 4 (couleur?) vers entrée ?? de l'emetteur
-
-Une prise Dupont 3pin femelle
-* Connecteur 1 (couleur?) vers entrée ?? de l'emetteur
-* Connecteur 2 (couleur?) vers entrée ?? de l'emetteur
-* Connecteur 3 (couleur?) vers entrée ?? de l'emetteur
-
-L'ensemble des connections est contenu dans un boitier imprimé en 3D dont voici le STL : 
+NB:
+* Le circuit des resistances est pris dans de la résine coulée dans un petit boitier
+* L'ensemble des connections est contenu dans un boitier imprimé en 3D dont voici le STL : 
 
 ### Paramétrage de l'emetteur
 
