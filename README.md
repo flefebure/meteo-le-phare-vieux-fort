@@ -44,6 +44,8 @@ La borne se compose des éléments suivants :
 | Capteur de température ?? | ? | ?? €| ?? |
 | Divers: Mât etc | ?| ??€ | ?? |
 
+
+
 ### Raccordement des éléments
 
 La girouette/anemometre Davis est cablée avec un connecteur RJ11 male. Le capteur de température est cablé avec une fiche Dupont 3pin male.
