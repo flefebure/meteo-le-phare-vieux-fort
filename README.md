@@ -58,7 +58,7 @@ La tension de sortie de la girouette varie entre 0V et 3.3V. La tension d'entré
 
 Principe :
 
-![Adaptation du voltage](medias/resistances.png)
+![Adaptation du voltage](medias/résistance1.png)
 
 Schema de branchement :
 
