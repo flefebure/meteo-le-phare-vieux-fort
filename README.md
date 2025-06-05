@@ -146,9 +146,9 @@ Dans RedNode nous allons traiter 2 flux de données :
 * Un premier "stream" qui stocke tous les événements reçus sur la queue MQTT dans la base InfluxDB
 * Un deuxieme stream qui s'execute toutes les minutes et qui traite les événements reçues pendant les 5 dernièeres minutes afin de les transmettre a OpenWindMap et WindGuru
 
-Voici coimmenbt se présente les 2 streams dans Node Red :
+Voici comment se présente les 2 streams dans Node Red :
 
-![NodeRed overview](medias/Red Node overview.jpeg)
+![NodeRed overview](medias/rednode_overview.jpeg)
 
 ### Stockage des événements
 
