@@ -135,6 +135,13 @@ systemctl start influxdb
 ```
 Vérifiez ensuite que la base est demarrée avec la commande "systemctl status influxdb"
 
+## Node Red
+
+Node Red est un outil de programmation visuelle (low-code) embarqué dans la passerelle Dragino. Il est disponible à l'adresse http://<IP gateway>:1880
+
+Les mesures des capteurs sont disponibles sur la queue MQTT local à la passerelle Dragino 
+
+
 
 
 
