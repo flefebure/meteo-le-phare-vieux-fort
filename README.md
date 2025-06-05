@@ -141,6 +141,31 @@ Node Red est un outil de programmation visuelle (low-code) embarqué dans la pas
 
 Les mesures des capteurs sont disponibles sur la queue MQTT local à la passerelle Dragino 
 
+Dans RedNode nous allons traiter 2 flux de données :
+
+* Un premier "stream" qui stocke tous les événements reçus sur la queue MQTT dans la base InfluxDB
+* Un deuxieme stream qui s'execute toutes les minutes et qui traite les événements reçues pendant les 5 dernièeres minutes afin de les transmettre a OpenWindMap et WindGuru
+
+Voici coimmenbt se présente les 2 streams dans Node Red :
+
+![NodeRed overview](medias/Red Node overview.jpeg)
+
+### Stockage des événements
+
+Le flux démarre par un noeud MQTT-IN. L'adresse du broker local est "application/+/device/+/event/"
+
+![MQTT IN](medias/red node mqtt in.png)
+
+Le format de l'événement est assez particulier. C'est une chaine Json encapsulée dans un autre objet Json. Il faut donc le décoder en 2 étapes. C'est ce qui expliuque les 2 noeuds "parse event en cascade"
+
+![parse event etape 1](medias/red node parse 1.png)  ![parse event etape 2](medias/red node parse 2.png)
+
+
+
+
+
+
+
 
 
 
