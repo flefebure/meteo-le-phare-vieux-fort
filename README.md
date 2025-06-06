@@ -1,6 +1,6 @@
 # La balise météo du phare de vieux-Fort en Guadeloupe
 
-Nous sommes André ("l'électricien"), Yves ("le chef de projet"), Franck ("le data engineer") et Noël (le Potomitan du phare), quatre pratiquants de wingfoil réguliers (et plus si jeunes) du spot. Vous nous avez sans doute croisés si vous fréquentez le lieu pour naviguer, plonger, sauter, bronzer, pique-niquer... dans cet endroit magnifique.
+Nous sommes André ("l'électricien"), Yves ("le chef de projet"), Franck ("le data engineer") et Noël (le Potomitan du phare), quatre pratiquants de wingfoil réguliers (pas des plus jeunes) du spot. Vous nous avez sans doute croisés si vous fréquentez le lieu pour naviguer, plonger, sauter, bronzer, pique-niquer... dans cet endroit magnifique.
 
 Avec le support de Thierry pour la partie "electronique", nous sommes à l'origine de l'installation de ce matériel qui a été mis en place avec une approche "DIY" et communautaire.
 
@@ -10,9 +10,9 @@ Vous trouverez ici le processus d'installation de cette borne, afin que vous pui
 
 ### Le matériel
 
-La borne est destinée a être installée sur la galerie au sommet du phare de Vieux-Fort. Ainsi il est primordial qu'elle soit la plus robuste et la plus autonome possible. En effet toute intervention necessiera une synchronisation avec le personnel des phares & balises. Par ailleurs, la borne ne pourra pas puiser son énergie au niveau des installations électriques du phare, il faut donc qu'elle soit autonome en énergie.
+La borne est destinée a être installée sur la galerie au sommet du phare de Vieux-Fort. Ainsi il est primordial qu'elle soit la plus robuste et la plus autonome possible. En effet toute intervention necessitera une synchronisation avec le personnel des phares & balises. Par ailleurs, la borne ne pourra pas puiser son énergie au niveau des installations électriques du phare, il faut donc qu'elle soit autonome en énergie.
 
-Basiquement, nous devons arbitrer entre 2 technologies :
+Basiquement, nous devions arbitrer entre 2 technologies :
 
 1. Un montage communiquant sur un réseau haut-débit (GSM 4G/5G)
    * Avantages : Réseau autonome. Transmission des données à haute fréquence. Possibilité d'équiper la borne d'une caméra.
@@ -21,7 +21,7 @@ Basiquement, nous devons arbitrer entre 2 technologies :
    * Avantages : Très économe en énergie, autonomie théorique de plusieurs années.
    * Inconvénients : Nécessité d'integrer un point d'accès à Internet. Webcam pas ensisageable.
 
-Le point de l'énergie étant prédominant, c'est sur une installation Lora que le choix s'est porté. C'est Yves, qui vit a quelques centaines de mètres à vol d'oiseau qui hebergera la passerelle Internet.
+Le point de l'énergie étant prédominant, c'est sur une installation Lora que le choix s'est porté. C'est Yves, qui vit à quelques centaines de mètres à vol d'oiseau qui hébergera la passerelle Internet.
 
 ### Le logiciel
 
@@ -68,8 +68,8 @@ NB:
 * Le circuit des resistances est pris dans de la résine coulée dans un petit boitier
 * L'ensemble des connections est contenu dans un boitier imprimé en 3D dont voici les fichiers STL :
 
-* [Bague étancche diametre 10](medias/bague%20etanche%20d10.5_d5mm.stl)
-* [Bague étancche diametre 13](medias/bague%20etanche%20d13.5_d4mm.stl)
+* [Bague étanche diametre 10](medias/bague%20etanche%20d10.5_d5mm.stl)
+* [Bague étanche diametre 13](medias/bague%20etanche%20d13.5_d4mm.stl)
 * [Haut du boitier](medias/boitier%20connexion%20haut.stl)
 * [Bas du boitier](medias/boitier%20connexion%20bas.stl)
 
@@ -78,9 +78,11 @@ NB:
 
 L'emetteur sera réglé sur son Mode 6
 
-Procédure AT ....
+TODO : décrire Procédure AT
 
 ### Appairage de la passerelle à l'emetteur
+
+TODO : décrire procédure d'appairage
 
 ## Mise en oeuvre logicielle
 
@@ -90,18 +92,18 @@ Une fois la passerelle Lora branchée sur un routeur internet, celui-ci lui affe
 Un acces à http://192.168.1.20 permet d'afficher l'interface d'administration de la passerelle
 ![acceuil gateway](medias/home_gateway.png)
 
-Cette interface est surtout utilse pour vérifier que la paserelle est bien connectée à l'emetteur et peut accéder à Internet. La majeure partie du travail s'effectue via l'utilitaire "Chirpstack" qui est disponible a l'adresse http://192.168.1.20:8080
+Cette interface est surtout utilse pour vérifier que la paserelle est bien connectée à l'emetteur et peut accéder à Internet. La majeure partie des configurations s'effectue via l'utilitaire "Chirpstack" qui est disponible a l'adresse http://192.168.1.20:8080
 
 ### Chirpstack
 
 ![acceuil Chirpstack](medias/home_chirpstack.png)
 
-La premiere tache est de créer un template pour l'emetteur
+La premiere tâche est de créer un template pour l'emetteur
 Voici notre configuration :
 
 ![Template device](medias/device_template.png)
 
-Il faut ensuite définir un template, en effet l'emetteur Lora envoie ses données sous forme de trame hexadécimales, le codec va permettre de convertir la charge utile de ces trames en informations utilisables, par exemple la températur ou le nombre de rotations de l'anémomètre.
+Il faut ensuite définir un template, en effet l'emetteur Lora envoie ses données sous forme de trames hexadécimales, le codec va permettre de convertir la charge utile de ces trames en informations utilisables, par exemple la températur ou le nombre de rotations de l'anémomètre.
 Le wiki de Dragino vous propose un Codec à utiliser
 
 [Codec](https://github.com/dragino/dragino-end-node-decoder/blob/main/SN50_v3-LB/SN50_v3-LB_ChirpstackV4_decode.txt)
@@ -122,11 +124,11 @@ A ce stade, vous devez pouvoir visualiser les événements décodés qui provien
 
 ![Evénements](medias/events.png)
 
-Pour la suite de la configuration, j'aavsi prévu de sauvegarder les événements dans une base locale pour ensuite les traiter et les transmettre aux services tiers (Windguru) et pour cela j'ai essayé de mettre en oeuvre une "integration" de type "InfluxDB"
+Pour la suite de la configuration, il était prévu de sauvegarder les événements dans une base locale pour ensuite les traiter et les transmettre aux services tiers (Windguru) et pour cela j'ai essayé de mettre en oeuvre une "integration" de type "InfluxDB"
 
-![Chirpstack to Influx
+![Chirpstack to Influx](medias/chirpstack_influxdb.png)
 
-Néanmoins, je ne suis pas parvenu à faire fonctionner ce connecteur. La mise en oeuvre a par la suite été centralisée dans un 3e outil : Red-Note
+Néanmoins, je ne suis pas parvenu à faire fonctionner ce connecteur. La mise en oeuvre a par la suite été centralisée dans un 3e outil : Node-Red
 
 ### InfluxDB
 
@@ -144,14 +146,14 @@ Vérifiez ensuite que la base est demarrée avec la commande "systemctl status i
 
 ## Node Red
 
-Node Red est un outil de programmation visuelle (low-code) embarqué dans la passerelle Dragino. Il est disponible à l'adresse http://<IP gateway>:1880
+Node Red est un outil de programmation visuelle (low-code) embarqué dans la passerelle Dragino. Il est disponible à l'adresse http://192.168.1.20:1880
 
-Les mesures des capteurs sont disponibles sur la queue MQTT local à la passerelle Dragino
+Les mesures des capteurs sont disponibles sur la queue MQTT locale à la passerelle Dragino
 
 Dans RedNode nous allons traiter 2 flux de données :
 
-* Un premier "stream" qui stocke tous les événements reçus sur la queue MQTT dans la base InfluxDB
-* Un deuxieme stream qui s'execute toutes les minutes et qui traite les événements reçues pendant les 5 dernièeres minutes afin de les transmettre a OpenWindMap et WindGuru
+* Un premier "stream" qui stocke tous les mesures reçues sur la queue MQTT dans la base InfluxDB
+* Un deuxieme stream qui s'execute toutes les minutes et qui traite les mesures reçues pendant les 5 dernièeres minutes afin de les transformer puis de les transmettre a OpenWindMap et WindGuru
 
 Voici comment se présente les 2 streams dans Node Red :
 
@@ -159,11 +161,11 @@ Voici comment se présente les 2 streams dans Node Red :
 
 ### Stockage des événements
 
-Le flux démarre par un noeud MQTT-IN. L'adresse du broker local est "application/+/device/+/event/"
+Le flux démarre par un noeud MQTT-IN. Le "topic" est "application/+/device/+/event/+"
 
 ![MQTT IN](medias/red_node_mqtt_in.png)
 
-Le format de l'événement est assez particulier. C'est une chaine Json encapsulée dans un autre objet Json. Il faut donc le décoder en 2 étapes. C'est ce qui expliuque les 2 noeuds "parse event en cascade"
+Le format de l'événement est assez particulier. C'est une chaine Json encapsulée dans un autre objet Json. Il faut donc le décoder en 2 étapes. C'est ce qui explique les 2 noeuds "parse event" en cascade
 
 ![parse event etape 1](medias/red_node_parse_1.png)  ![parse event etape 2](medias/red_node_parse_2.png)
 
@@ -189,12 +191,12 @@ TODO : détailler requete et reponse InfluxDB
 
 Les mesures sont disponibles, nous pouvons mainenant calculer les métriques finales selon ces regles :
 
-* Les vitesses en km/h seront données par la formule suivante :  V = P*(2.25*1.60934/T) avec P le nombre de rotation entre 2 points de mesure et Te temps en seconde entre ces 2 mesures
-* La vitesse moyenne est obtenu en prenant en compte les 2 points de mesure les plus éloignées sur la période de 5 minutesrniere mesure receuillie sur la période de 5 minuted, divisée par le temps entre ces 2 mesures
-* Les vitesses min et max sont obtenues entre 2 points de mesures consécutifs  (éloigns de 30 secondes) sur la période de 5 minutes
-* La direction du vent en dedrés par rapport au nord est donnée par la formule suivante : y = modulo(395,1932806 *x - 59,62030662 + Cal, 360), ou x est la mesure en V du boitier (entre 0.1 et 1V environ) et Cal est la direction du support girouette par rapport au nord (Si on pointe le support girouette vers le nord alors Cal = 0 si tu pointe l’EST Cal = 90, le sud Cal = 180 et l’ouest  Cal = 270)
+* Les vitesses en km/h seront données par la formule suivante :  V = P*(2.25*1.60934/T) avec P le nombre de rotations entre 2 points de mesure et T le temps en secondes entre ces 2 mesures
+* La vitesse moyenne est obtenue en prenant en compte les 2 points de mesure les plus éloignés sur la période de 5 minutes.
+* Les vitesses min et max sont obtenues entre 2 points de mesures consécutifs  (éloignés de 30 secondes) sur la période de 5 minutes.
+* La direction du vent en degrés par rapport au nord est donnée par la formule suivante : y = modulo(395,1932806 *x - 59,62030662 + Cal, 360), ou x est la mesure en volts du boitier (entre 0.1 et 1V environ) et Cal est la direction du support girouette par rapport au nord (Si on pointe le support girouette vers le nord alors Cal = 0 si tu pointe l’EST Cal = 90, le sud Cal = 180 et l’ouest  Cal = 270)
 
-Le code figurant dans le noeud fonction "calculer vitesse et directioin" est donc :
+Le code figurant dans le noeud fonction "calculer vitesse et direction" est donc :
 
 ```
 var values = msg.payload.results[0].series[0].values
@@ -249,11 +251,11 @@ payload.vitesse_min_ms = payload.vitesse_min_kmh / 3.6
 return msg;
 ```
 
-Un test, utilisant un noeud redNode de type "switch" est mis en place pour arreter le traitement si on a pas trouvé au moins 2 mesures sur la période de 5 minutes
+Un test, utilisant un noeud redNode de type "switch" est mis en place pour arrêter le traitement si on a pas trouvé au moins 2 mesures sur la période de 5 minutes
 
 ![Test 2 mesures](medias/red_node_switch.png)
 
-On prépare l'appel a l'API OpenWindMap en opréparant l'URL 
+On prépare l'appel a l'API OpenWindMap
 
 ![prepare openwindmap](medias/red_node_prepare_openwindmap.png)
 
@@ -261,7 +263,7 @@ On prépare l'appel a l'API OpenWindMap en opréparant l'URL
 "https://api.openwindmap.org/v1/http-receive/1227?key=**************&avg=" & payload.vitesse_kmh & "&heading=" & payload.angle & "&voltage=" & payload.batterie & "&temperature=" & payload.temperature & "&date=" & payload.max_time & "&min=" & payload.vitesse_min_kmh & "&max=" & payload.vitesse_max_kmh
 ```
 
-La préparation de l'appel a l'API Windguru est un peu plus complexe car on doit calculer un MD5. Une fonction MD5 est necessaire
+La préparation de l'appel a l'API Windguru est un peu plus complexe car on doit calculer un MD5. Une fonction autonome permettant de calculer des MD5 est embarquée dans notre code.
 
 ![prepare windguru](medias/red_node_prepare_windguru.png)
 
