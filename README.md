@@ -45,6 +45,12 @@ La borne se compose des éléments suivants :
 |     Capteur de température DS18B20     | [Fiche produit](https://www.yadom.fr/shop/ds18cable1m-capteur-de-temperature-inox-ds18b20-1m-286) |           ~3 €           |         [Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/ds18b20.pdf)         |
 |            Divers: Mât etc            |                                                 ?                                                 |            ??€            |                                                      ??                                                      |
 
+Le boitier émetteur Dragino SN50v3-LB/LS existe en 2 versions :
+*	SN50v3-LB qui fonctionne sur pile Li/SOCl2 de 8500mAh d'une durée d’environ 3-5 ans (suivant consommation des capteurs)
+*	SN50v3-LS qui fonctionne sur panneau solaire + batterie lithium ion
+
+La version SN50v3-LS a été choisi car elle évite la maintenance d’un changement de batterie.
+
 ### Raccordement des éléments
 
 La girouette/anemometre Davis est cablée avec un connecteur RJ11 male. Le capteur de température est cablé avec une fiche Dupont 3pin male.
@@ -75,9 +81,21 @@ NB:
 
 ### Paramétrage de l'emetteur
 
-L'emetteur sera réglé sur son Mode 6
+Le boitier émetteur Dragino SN50v3-LB/LS est un boitier multi usage qui demande à être configuré en fonction de l’application et des capteurs qui seront connecté dessus. La documentation propose différent mode : https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20LoRaWAN%20End%20Nodes/SN50v3-LB/#H2.3.2WorkingModes26SensorData.UplinkviaFPORT3D2
 
-TODO : décrire Procédure AT
+Dans notre cas nous allons utiliser le mode comptage : Mode 6, car nous avons à compter les tours de rotation de l’anémomètre, mesurer le potentiomètre de la girouette et mesurer la température.
+Le boitier SN50v3-LB/LS prend en charge les méthodes de configuration suivante :
+* Commande AT via connexion Bluetooth (recommandée): [BLE Configure Instruction](https://wiki.dragino.com/xwiki/bin/view/Main/BLE%20Bluetooth%20Remote%20Configure/).
+* Commande AT via connexion UART voir : [UART Connection](https://wiki.dragino.com/xwiki/bin/view/Main/UART%20Access%20for%20LoRa%20ST%20v4%20base%20model/#H2.3UARTConnectionforSN50v3basemotherboard).
+* Par liaison descendante LoRaWAN.  Voir instruction : [IoT LoRaWAN Server section](https://wiki.dragino.com/xwiki/bin/view/Main/).
+
+La méthode « Commande AT via connexion Bluetooth » a été utilisé :
+
+Après installation sur un téléphone Android de l'utilitaire dragino "Devices.Toll" les commande AT nécessaire à la configuration souhaitée ont été envoyé :
+
+* Commande de passage en mode 6 : AT+MOD=2
+* Définition de la période de transmission en ms : AT+TDC=30000 (30000ms= 30s)
+
 
 ### Appairage de la passerelle à l'emetteur
 
