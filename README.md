@@ -1,8 +1,8 @@
-# La balise météo du phare de vieux-Fort en Guadeloupe
+# La balise météo du phare de Vieux-Fort en Guadeloupe
 
 Nous sommes André ("l'électricien"), Yves ("le chef de projet"), Franck ("le data engineer") et Noël (le Potomitan du phare), quatre pratiquants de wingfoil réguliers (pas des plus jeunes) du spot. Vous nous avez sans doute croisés si vous fréquentez le lieu pour naviguer, plonger, sauter, bronzer, pique-niquer... dans cet endroit magnifique.
 
-Avec le support de Thierry pour la partie "electronique", nous sommes à l'origine de l'installation de ce matériel qui a été mis en place avec une approche "DIY" et communautaire.
+Avec le support de Thierry pour la partie "électronique", nous sommes à l'origine de l'installation de ce matériel qui a été mis en place avec une approche "DIY" et communautaire.
 
 Vous trouverez ici le processus d'installation de cette borne, afin que vous puissiez la répliquer. Nous vous y encourageons.
 
@@ -10,7 +10,7 @@ Vous trouverez ici le processus d'installation de cette borne, afin que vous pui
 
 ### Le matériel
 
-La borne est destinée a être installée sur la galerie au sommet du phare de Vieux-Fort. Ainsi il est primordial qu'elle soit la plus robuste et la plus autonome possible. En effet toute intervention necessitera une synchronisation avec le personnel des phares & balises. Par ailleurs, la borne ne pourra pas puiser son énergie au niveau des installations électriques du phare, il faut donc qu'elle soit autonome en énergie.
+La borne est destinée a être installée sur la galerie au sommet du phare de Vieux-Fort. Ainsi il est primordial qu'elle soit la plus robuste et la plus autonome possible. En effet toute intervention nécessitera une synchronisation avec le personnel des phares & balises. Par ailleurs, la borne ne pourra pas puiser son énergie au niveau des installations électriques du phare, il faut donc qu'elle soit autonome en énergie.
 
 Basiquement, nous devions arbitrer entre 2 technologies :
 
@@ -19,7 +19,7 @@ Basiquement, nous devions arbitrer entre 2 technologies :
    * Inconvénients : technologie gourmande en énergie. Nécessité de mettre en place une recharge solaire (relativement) conséquente.
 2. Un montage communiquant sur un réseau bas-débit (LORA ou SigFOX)
    * Avantages : Très économe en énergie, autonomie théorique de plusieurs années.
-   * Inconvénients : Nécessité d'integrer un point d'accès à Internet. Webcam pas ensisageable.
+   * Inconvénients : Nécessité d'intégrer un point d'accès à Internet. Webcam pas envisageable.
 
 Le point de l'énergie étant prédominant, c'est sur une installation Lora que le choix s'est porté. C'est Yves, qui vit à quelques centaines de mètres à vol d'oiseau qui hébergera la passerelle Internet.
 
@@ -27,7 +27,7 @@ Le point de l'énergie étant prédominant, c'est sur une installation Lora que 
 
 Les choix suivants s'offraient a nous :
 
-1. Mettre en place une stack complete "Internet Of Things" complete avec un broker MQTT et un site web autonome abonné à ce broker et chargé d'exposer les données météo
+1. Mettre en place une stack "Internet Of Things" complète avec un broker MQTT et un site web autonome abonné à ce broker et chargé d'exposer les données météo
 2. Centraliser le traitement des données au niveau de la gateway Lora et s'appuyer sur un service à la "WindGuru" pour présenter les données.
 
 Par souçi de simplicité, c'est l'option 2. qui a été choisie. Néanmoins, afin d'assurer une redondance, la borne sera intégrée à 2 services tiers : WindGuru et OpenWindMap
@@ -39,11 +39,11 @@ La borne se compose des éléments suivants :
 
 |                  Item                  |                                                Lien                                                |            Prix            |                                                      Doc                                                      |
 | :-------------------------------------: | :------------------------------------------------------------------------------------------------: | :------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|         Anémométre Davis 6410         |                       [Fiche produit](https://github.com/flefebure/meteo-le-phare-vieux-fort/blob/0f8d7a7ca1cc759bb87fbd7ad5027cff3bb662dc/medias/6410_An%C3%A9mom%C3%A8tre_FICHE%20PRODUIT_FR_DAVIS-1.pdf)                       |           ~245€           |        [Manuel](https://www.meteo-shopping.com/fr/capteurs/109-anemometre-girouette-vantage-pro.html)        |
-| Boitier émétteur Dragino SN50v3-LS   | [Fiche produit](https://www.dragino.com/products/lora-lorawan-end-node/item/260-sn50v3-lb-ls.html) |           ~60€           | [Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20LoRaWAN%20End%20Nodes/SN50v3-LB/) |
+|         Anémomètre Davis 6410         |                       [Fiche produit](https://github.com/flefebure/meteo-le-phare-vieux-fort/blob/0f8d7a7ca1cc759bb87fbd7ad5027cff3bb662dc/medias/6410_An%C3%A9mom%C3%A8tre_FICHE%20PRODUIT_FR_DAVIS-1.pdf)                       |           ~245€           |        [Manuel](https://www.meteo-shopping.com/fr/capteurs/109-anemometre-girouette-vantage-pro.html)        |
+| Boitier émetteur Dragino SN50v3-LS   | [Fiche produit](https://www.dragino.com/products/lora-lorawan-end-node/item/260-sn50v3-lb-ls.html) |           ~60€           | [Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20LoRaWAN%20End%20Nodes/SN50v3-LB/) |
 |       Gateway Lora Dragino LPS8v2       |    [Fiche produit](https://www.dragino.com/products/lora-lorawan-gateway/item/228-lps8v2.html)    | 190 à 260€ suivant model |   [Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20All%20Gateway%20models/HP0C/)   |
 |     Capteur de température DS18B20     | [Fiche produit](https://www.yadom.fr/shop/ds18cable1m-capteur-de-temperature-inox-ds18b20-1m-286) |           ~3 €           |         [Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/ds18b20.pdf)         |
-|            Divers: Mât etc            |                                                 ?                                                 |            ??€            |                                                      ??                                                      |
+|            Divers : Mât etc.            |                                                 ?                                                 |            ??€            |                                                      ??                                                      |
 
 Le boitier émetteur Dragino SN50v3-LB/LS existe en 2 versions :
 *	SN50v3-LB qui fonctionne sur pile Li/SOCl2 de 8500mAh d'une durée d’environ 3-5 ans (suivant consommation des capteurs)
@@ -53,7 +53,7 @@ La version SN50v3-LS a été choisi car elle évite la maintenance d’un change
 
 ### Raccordement des éléments
 
-La girouette/anemometre Davis est cablée avec un connecteur RJ11 male. Le capteur de température est cablé avec une fiche Dupont 3pin male.
+La girouette/anémomètre Davis est câblée avec un connecteur RJ11 male. Le capteur de température est câblé avec une fiche Dupont 3pin male.
 
 ![girouette/anémomètre Davis](medias/davis.jpg)
 ![emetteur Dragino](medias/emetteur.jpg)
@@ -73,13 +73,13 @@ NB:
 
 * Le circuit des résistances est pris dans de la résine coulée dans un petit boitier
 * L'ensemble des connections est contenu dans un boitier imprimé en 3D avec du PETG comportant 2 passe-câble avec presse-étoupes en plastique étanche PG11 et PG13.5. Les presse-étoupes ont un diamètre interne de 11 mm et 13.5 mm pour pouvoir insérer les câbles avec leur connecteur. Enfin des bagues d’étanchéité sont imprimée en TPU pour adapter le diamètre des câbles au presse étoupe. Les différent fichiers STL sont disponible ci-dessous :
-  * [Bague étanche diametre 10](medias/bague%20etanche%20d10.5_d5mm.stl)
-  * [Bague étanche diametre 13](medias/bague%20etanche%20d13.5_d4mm.stl)
+  * [Bague étanche diamètre 10](medias/bague%20etanche%20d10.5_d5mm.stl)
+  * [Bague étanche diamètre 13](medias/bague%20etanche%20d13.5_d4mm.stl)
   * [Haut du boitier](medias/boitier%20connexion%20haut.stl)
   * [Bas du boitier](medias/boitier%20connexion%20bas.stl)
 
 
-### Paramétrage de l'emetteur
+### Paramétrage de l'émetteur
 
 Le boitier émetteur Dragino SN50v3-LB/LS est un boitier multi usage qui demande à être configuré en fonction de l’application et des capteurs qui seront connecté dessus. La documentation propose différent mode : [Mode boitier](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20LoRaWAN%20End%20Nodes/SN50v3-LB/#H2.3.2WorkingModes26SensorData.UplinkviaFPORT3D2)
 
@@ -91,17 +91,17 @@ Le boitier SN50v3-LB/LS prend en charge les méthodes de configuration suivante 
 
 La méthode « Commande AT via connexion Bluetooth » a été utilisé :
 
-Après installation sur un téléphone Android de l'utilitaire dragino "Devices.Toll" les commande AT nécessaire à la configuration souhaitée ont été envoyé :
+Après installation sur un téléphone Android de l'utilitaire dragino "Devices.Toll" les commandes AT nécessaire à la configuration souhaitée ont été envoyé :
 
 * Commande de passage en mode 6 : AT+MOD=2
 * Définition de la période de transmission en ms : AT+TDC=30000 (30000ms= 30s)
 
 
-### Appairage de la passerelle à l'emetteur
+### Appairage de la passerelle à l'émetteur
 
 TODO : décrire procédure d'appairage
 
-## Mise en oeuvre logicielle
+## Mise en œuvre logicielle
 
 ### administration passerelle
 
@@ -129,7 +129,7 @@ Collez simplement le contenu de ce fichier dans la partie Codec du template
 
 ![Template device](medias/device_codec.png)
 
-Définissez ensuite une "Gateway". Vous aurez a renseigner le code EUI64 de l'emetteur qui figure sur son étiquette
+Définissez ensuite une "Gateway". Vous aurez a renseigner le code EUI64 de l'émetteur qui figure sur son étiquette
 
 ![New gateway](medias/new_gateway.png)
 
@@ -137,7 +137,7 @@ Enfin vous aurez a définir une "application", qui fait le lien entre la gateway
 
 ![New app](medias/new_application.png)
 
-A ce stade, vous devez pouvoir visualiser les événements décodés qui proviennent de l'emetteur
+A ce stade, vous devez pouvoir visualiser les événements décodés qui proviennent de l'émetteur
 
 ![Evénements](medias/events.png)
 
@@ -206,7 +206,7 @@ Nous allons enrichir cet événement avec la liste des mesures recueillies penda
 
 TODO : détailler requete et reponse InfluxDB
 
-Les mesures sont disponibles, nous pouvons mainenant calculer les métriques finales selon ces regles :
+Les mesures sont disponibles, nous pouvons maintenant calculer les métriques finales selon ces regles :
 
 * Les vitesses en km/h seront données par la formule suivante :  V = P*(2.25*1.60934/T) avec P le nombre de rotations entre 2 points de mesure et T le temps en secondes entre ces 2 mesures (formule adapté de la documentation DAVIS 6410)
 * La vitesse moyenne est obtenue en prenant en compte les 2 points de mesure les plus éloignés sur la période de 5 minutes.
