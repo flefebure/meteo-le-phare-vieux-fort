@@ -40,7 +40,7 @@ La borne se compose des éléments suivants :
 |                  Item                  |                                                Lien                                                |            Prix            |                                                      Doc                                                      |
 | :-------------------------------------: | :------------------------------------------------------------------------------------------------: | :------------------------: | :-----------------------------------------------------------------------------------------------------------: |
 |         Anémométre Davis 6410         |                       [Fiche produit](https://www.davis-meteo.com/6410.php)                       |           ~245€           |        [Manuel](https://www.meteo-shopping.com/fr/capteurs/109-anemometre-girouette-vantage-pro.html)        |
-| Boitier émétteur Dragino SN50v3-LB/LS | [Fiche produit](https://www.dragino.com/products/lora-lorawan-end-node/item/260-sn50v3-lb-ls.html) |           ~60€           | [Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20LoRaWAN%20End%20Nodes/SN50v3-LB/) |
+| Boitier émétteur Dragino SN50v3-LS   | [Fiche produit](https://www.dragino.com/products/lora-lorawan-end-node/item/260-sn50v3-lb-ls.html) |           ~60€           | [Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20LoRaWAN%20End%20Nodes/SN50v3-LB/) |
 |       Gateway Lora Dragino LPS8v2       |    [Fiche produit](https://www.dragino.com/products/lora-lorawan-gateway/item/228-lps8v2.html)    | 190 à 260€ suivant model |   [Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20All%20Gateway%20models/HP0C/)   |
 |     Capteur de température DS18B20     | [Fiche produit](https://www.yadom.fr/shop/ds18cable1m-capteur-de-temperature-inox-ds18b20-1m-286) |           ~3 €           |         [Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/ds18b20.pdf)         |
 |            Divers: Mât etc            |                                                 ?                                                 |            ??€            |                                                      ??                                                      |
@@ -53,7 +53,7 @@ La girouette/anemometre Davis est cablée avec un connecteur RJ11 male. Le capte
 ![emetteur Dragino](medias/emetteur.jpg)
 ![Cablage et boitier imprimé en 3D](medias/boitier.jpg)
 
-La tension de sortie de la girouette varie entre 0V et 3.3V. La tension d'entrée du senseur ADC de l'emetteur doit varier entre 0.1V et 1.1V. Il faut donc mettre en oeuvre un pont de resistances afin d'adapter le voltage
+La tension de sortie de la girouette varie entre 0V et la tension d'alimentation du boitier émetteur Vdd soit 3.3V. La tension d'entrée du convertisseur ADC de l'émetteur doit être comprise entre 0.1V et 1.1V. Il faut donc mettre en œuvre un pont de résistances afin d'adapter le voltage
 
 Principe :
 
@@ -66,8 +66,7 @@ Schema de branchement :
 NB:
 
 * Le circuit des resistances est pris dans de la résine coulée dans un petit boitier
-* L'ensemble des connections est contenu dans un boitier imprimé en 3D dont voici les fichiers STL :
-
+* L'ensemble des connections est contenu dans un boitier imprimé en 3D avec du PETG comportant 2 passe-câble avec presse-étoupes en plastique étanche PG11 et PG13.5. Les presse-étoupes ont un diamètre interne de 11 mm et 16 mm pour pouvoir insérer les câbles avec leur connecteur. Enfin des bagues d’étanchéité sont imprimer en TPU pour adapter le diamètre des câbles au presse étoupe. Les différent fichiers STL sont disponible ci-dessous :
 * [Bague étanche diametre 10](medias/bague%20etanche%20d10.5_d5mm.stl)
 * [Bague étanche diametre 13](medias/bague%20etanche%20d13.5_d4mm.stl)
 * [Haut du boitier](medias/boitier%20connexion%20haut.stl)
