@@ -30,7 +30,7 @@ Les choix suivants s'offraient a nous :
 1. Mettre en place une stack "Internet Of Things" complète avec un broker MQTT et un site web autonome abonné à ce broker et chargé d'exposer les données météo
 2. Centraliser le traitement des données au niveau de la gateway Lora et s'appuyer sur un service à la "WindGuru" pour présenter les données.
 
-Par souçi de simplicité, c'est l'option 2. qui a été choisie. Néanmoins, afin d'assurer une redondance, la borne sera intégrée à 2 services tiers : WindGuru et OpenWindMap
+Par souci de simplicité, c'est l'option 2. qui a été choisie. Néanmoins, afin d'assurer une redondance, la borne sera intégrée à 2 services tiers : WindGuru et OpenWindMap
 
 ## Raccordement des matériels
 
@@ -141,15 +141,15 @@ A ce stade, vous devez pouvoir visualiser les événements décodés qui provien
 
 ![Evénements](medias/events.png)
 
-Pour la suite de la configuration, il était prévu de sauvegarder les événements dans une base locale pour ensuite les traiter et les transmettre aux services tiers (Windguru) et pour cela j'ai essayé de mettre en oeuvre une "integration" de type "InfluxDB"
+Pour la suite de la configuration, il était prévu de sauvegarder les événements dans une base locale pour ensuite les traiter et les transmettre aux services tiers (Windguru) et pour cela j'ai essayé de mettre en œuvre une "integration" de type "InfluxDB"
 
 ![Chirpstack to Influx](medias/chirpstack_influxdb.png)
 
-Néanmoins, je ne suis pas parvenu à faire fonctionner ce connecteur. La mise en oeuvre a par la suite été centralisée dans un 3e outil : Node-Red
+Néanmoins, je ne suis pas parvenu à faire fonctionner ce connecteur. La mise en œuvre a par la suite été centralisée dans un 3e outil : Node-Red
 
 ### InfluxDB
 
-La base conseillée par Dragino n'est pas installée par défaut. Pour l'installer, connectez-vous par SSH a l'IP de la passerelle puis executez les commandes suivantes :
+La base conseillée par Dragino n'est pas installée par défaut. Pour l'installer, connectez-vous par SSH a l'IP de la passerelle puis exécutez les commandes suivantes :
 
 ```
 curl https://repos.influxdata.com/influxdata-archive_compat.key | gpg --dearmor | sudo tee /usr/share/keyrings/influxdb-archive-keyring.gpg >/dev/null
@@ -169,7 +169,7 @@ Les mesures des capteurs sont disponibles sur la queue MQTT locale à la passere
 
 Dans RedNode nous allons traiter 2 flux de données :
 
-* Un premier "stream" qui stocke tous les mesures reçues sur la queue MQTT dans la base InfluxDB
+* Un premier "stream" qui stocke toutes les mesures reçues sur la queue MQTT dans la base InfluxDB
 * Un deuxième "stream" qui s'exécute toutes les minutes et qui traite les mesures reçues pendant les 5 dernières minutes afin de les transformer puis de les transmettre a OpenWindMap et WindGuru
 
 Voici comment se présente les 2 streams dans Node Red :
@@ -198,21 +198,21 @@ Enfin on insere l'événement dans InfluxDB
 
 ![Insertion Influx](medias/red_node_insert_influx_1.png)
 
-### Traitemrnt des événements
+### Traitement des événements
 
-Le premier noeud est un scheduler Node Red qui diffuse un événement toutes les minutes.
+Le premier nœud est un scheduler Node Red qui diffuse un événement toutes les minutes.
 
 Nous allons enrichir cet événement avec la liste des mesures recueillies pendant les 5 dernières minutes
 
 TODO : détailler requete et reponse InfluxDB
 
-Les mesures sont disponibles, nous pouvons maintenant calculer les métriques finales selon ces regles :
+Les mesures sont disponibles, nous pouvons maintenant calculer les métriques finales selon ces règles :
 
-* Les vitesses en km/h seront données par la formule suivante :  V = P*(2.25*1.60934/T) avec P le nombre de rotations entre 2 points de mesure et T le temps en secondes entre ces 2 mesures (formule adapté de la documentation DAVIS 6410)
+* Les vitesses en km/h seront données par la formule suivante :  V = P*(2.25*1.60934/T) avec P le nombre de rotations entre 2 points de mesure et T le temps en secondes entre ces 2 mesures (formule adaptée de la documentation DAVIS 6410)
 * La vitesse moyenne est obtenue en prenant en compte les 2 points de mesure les plus éloignés sur la période de 5 minutes.
 * Les vitesses min et max sont obtenues entre 2 points de mesures consécutifs  (éloignés de 30 secondes) sur la période de 5 minutes.
 * La direction du vent en degrés par rapport au nord est donnée par la formule suivante : y = modulo(395,1932806 *x - 59,62030662 + Cal, 360), ou x est la mesure en volts du boitier (entre 0.1 et 1V environ) et Cal est la direction du support girouette par rapport au nord (Si on pointe le support girouette vers le nord alors Cal = 0 si tu pointe l’EST Cal = 90, le sud Cal = 180 et l’ouest  Cal = 270).
-la formule donnant la direction du vent en degrés a été obtenue en effectuant une calibration de la girouette connectée au boitier : pour différente position de la girouette on mesure la tension du potentiomètre et la valeur renvoyée par l’ADC du boitier puis on passe une droite de régression a*x+b. si un autre modéle de girouette est  utilisé  ou si un  autre pont de résistance est mis en œuvre, la calibration est à refaire
+la formule donnant la direction du vent en degrés a été obtenue en effectuant une calibration de la girouette connectée au boitier : pour différente position de la girouette on mesure la tension du potentiomètre et la valeur renvoyée par l’ADC du boitier puis on passe une droite de régression a*x+b. si un autre modèle de girouette est  utilisé  ou si un  autre pont de résistance est mis en œuvre, la calibration est à refaire
 
 
 Le code figurant dans le noeud fonction "calculer vitesse et direction" est donc :
@@ -270,7 +270,7 @@ payload.vitesse_min_ms = payload.vitesse_min_kmh / 3.6
 return msg;
 ```
 
-Un test, utilisant un noeud redNode de type "switch" est mis en place pour arrêter le traitement si on a pas trouvé au moins 2 mesures sur la période de 5 minutes
+Un test, utilisant un noeud redNode de type "switch" est mis en place pour arrêter le traitement si on n'a pas trouvé au moins 2 mesures sur la période de 5 minutes
 
 ![Test 2 mesures](medias/red_node_switch.png)
 
