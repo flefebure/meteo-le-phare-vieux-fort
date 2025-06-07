@@ -93,7 +93,7 @@ La méthode « Commande AT via connexion Bluetooth » a été utilisé :
 
 Après installation sur un téléphone Android de l'utilitaire dragino "Devices.Toll" les commandes AT nécessaire à la configuration souhaitée ont été envoyé :
 
-* Commande de passage en mode 6 : AT+MOD=2
+* Commande de passage en mode 6 : AT+MOD=6
 * Définition de la période de transmission en ms : AT+TDC=30000 (30000ms= 30s)
 
 
