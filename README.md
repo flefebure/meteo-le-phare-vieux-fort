@@ -71,12 +71,12 @@ Schema de branchement :
 
 NB:
 
-* Le circuit des resistances est pris dans de la résine coulée dans un petit boitier
-* L'ensemble des connections est contenu dans un boitier imprimé en 3D avec du PETG comportant 2 passe-câble avec presse-étoupes en plastique étanche PG11 et PG13.5. Les presse-étoupes ont un diamètre interne de 11 mm et 16 mm pour pouvoir insérer les câbles avec leur connecteur. Enfin des bagues d’étanchéité sont imprimer en TPU pour adapter le diamètre des câbles au presse étoupe. Les différent fichiers STL sont disponible ci-dessous :
-* [Bague étanche diametre 10](medias/bague%20etanche%20d10.5_d5mm.stl)
-* [Bague étanche diametre 13](medias/bague%20etanche%20d13.5_d4mm.stl)
-* [Haut du boitier](medias/boitier%20connexion%20haut.stl)
-* [Bas du boitier](medias/boitier%20connexion%20bas.stl)
+* Le circuit des résistances est pris dans de la résine coulée dans un petit boitier
+* L'ensemble des connections est contenu dans un boitier imprimé en 3D avec du PETG comportant 2 passe-câble avec presse-étoupes en plastique étanche PG11 et PG13.5. Les presse-étoupes ont un diamètre interne de 11 mm et 13.5 mm pour pouvoir insérer les câbles avec leur connecteur. Enfin des bagues d’étanchéité sont imprimée en TPU pour adapter le diamètre des câbles au presse étoupe. Les différent fichiers STL sont disponible ci-dessous :
+  * [Bague étanche diametre 10](medias/bague%20etanche%20d10.5_d5mm.stl)
+  * [Bague étanche diametre 13](medias/bague%20etanche%20d13.5_d4mm.stl)
+  * [Haut du boitier](medias/boitier%20connexion%20haut.stl)
+  * [Bas du boitier](medias/boitier%20connexion%20bas.stl)
 
 
 ### Paramétrage de l'emetteur
@@ -109,18 +109,18 @@ Une fois la passerelle Lora branchée sur un routeur internet, celui-ci lui affe
 Un acces à http://192.168.1.20 permet d'afficher l'interface d'administration de la passerelle
 ![acceuil gateway](medias/home_gateway.png)
 
-Cette interface est surtout utilse pour vérifier que la paserelle est bien connectée à l'emetteur et peut accéder à Internet. La majeure partie des configurations s'effectue via l'utilitaire "Chirpstack" qui est disponible a l'adresse http://192.168.1.20:8080
+Cette interface est surtout utilse pour vérifier que la paserelle est bien connectée à l'émetteur et peut accéder à Internet. La majeure partie des configurations s'effectue via l'utilitaire "Chirpstack" qui est disponible a l'adresse http://192.168.1.20:8080
 
 ### Chirpstack
 
 ![acceuil Chirpstack](medias/home_chirpstack.png)
 
-La premiere tâche est de créer un template pour l'emetteur
+La premiere tâche est de créer un template pour l'émetteur 
 Voici notre configuration :
 
 ![Template device](medias/device_template.png)
 
-Il faut ensuite définir un template, en effet l'emetteur Lora envoie ses données sous forme de trames hexadécimales, le codec va permettre de convertir la charge utile de ces trames en informations utilisables, par exemple la températur ou le nombre de rotations de l'anémomètre.
+Il faut ensuite définir un template, en effet l'émetteur Lora envoie ses données sous forme de trames hexadécimales, le codec va permettre de convertir la charge utile de ces trames en informations utilisables, par exemple la température ou le nombre de rotations de l'anémomètre. 
 Le wiki de Dragino vous propose un Codec à utiliser
 
 [Codec](https://github.com/dragino/dragino-end-node-decoder/blob/main/SN50_v3-LB/SN50_v3-LB_ChirpstackV4_decode.txt)
@@ -170,7 +170,7 @@ Les mesures des capteurs sont disponibles sur la queue MQTT locale à la passere
 Dans RedNode nous allons traiter 2 flux de données :
 
 * Un premier "stream" qui stocke tous les mesures reçues sur la queue MQTT dans la base InfluxDB
-* Un deuxieme stream qui s'execute toutes les minutes et qui traite les mesures reçues pendant les 5 dernièeres minutes afin de les transformer puis de les transmettre a OpenWindMap et WindGuru
+* Un deuxième "stream" qui s'exécute toutes les minutes et qui traite les mesures reçues pendant les 5 dernières minutes afin de les transformer puis de les transmettre a OpenWindMap et WindGuru
 
 Voici comment se présente les 2 streams dans Node Red :
 
@@ -208,10 +208,12 @@ TODO : détailler requete et reponse InfluxDB
 
 Les mesures sont disponibles, nous pouvons mainenant calculer les métriques finales selon ces regles :
 
-* Les vitesses en km/h seront données par la formule suivante :  V = P*(2.25*1.60934/T) avec P le nombre de rotations entre 2 points de mesure et T le temps en secondes entre ces 2 mesures
+* Les vitesses en km/h seront données par la formule suivante :  V = P*(2.25*1.60934/T) avec P le nombre de rotations entre 2 points de mesure et T le temps en secondes entre ces 2 mesures (formule adapté de la documentation DAVIS 6410)
 * La vitesse moyenne est obtenue en prenant en compte les 2 points de mesure les plus éloignés sur la période de 5 minutes.
 * Les vitesses min et max sont obtenues entre 2 points de mesures consécutifs  (éloignés de 30 secondes) sur la période de 5 minutes.
-* La direction du vent en degrés par rapport au nord est donnée par la formule suivante : y = modulo(395,1932806 *x - 59,62030662 + Cal, 360), ou x est la mesure en volts du boitier (entre 0.1 et 1V environ) et Cal est la direction du support girouette par rapport au nord (Si on pointe le support girouette vers le nord alors Cal = 0 si tu pointe l’EST Cal = 90, le sud Cal = 180 et l’ouest  Cal = 270)
+* La direction du vent en degrés par rapport au nord est donnée par la formule suivante : y = modulo(395,1932806 *x - 59,62030662 + Cal, 360), ou x est la mesure en volts du boitier (entre 0.1 et 1V environ) et Cal est la direction du support girouette par rapport au nord (Si on pointe le support girouette vers le nord alors Cal = 0 si tu pointe l’EST Cal = 90, le sud Cal = 180 et l’ouest  Cal = 270).
+la formule donnant la direction du vent en degrés a été obtenue en effectuant une calibration de la girouette connectée au boitier : pour différente position de la girouette on mesure la tension du potentiomètre et la valeur renvoyée par l’ADC du boitier puis on passe une droite de régression a*x+b. si un autre modéle de girouette est  utilisé  ou si un  autre pont de résistance est mis en œuvre, la calibration est à refaire
+
 
 Le code figurant dans le noeud fonction "calculer vitesse et direction" est donc :
 
