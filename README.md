@@ -307,3 +307,10 @@ var query = "?uid=" + uid
 msg.url = url_base + query
 return msg;
 ```
+## Quelques images 
+
+![Station meteo en place](medias/IMG-20250603-WA0009.jpg)
+
+![Station meteo en place](medias/IMG-20250606-WA0014.jpg)
+
+![Station meteo en place](medias/IMG-20250606-WA0018.jpg)
