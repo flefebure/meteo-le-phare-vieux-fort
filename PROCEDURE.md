@@ -64,7 +64,7 @@ On peux surveiller le bon déroulement de l'envoie de la commande et de son exec
 
 <img width="696" alt="Capture d’écran 2025-06-22 150352" src="https://github.com/user-attachments/assets/78a2970d-68f1-4ddd-9d28-56a44776c0c6" />
 
-Ou l'on peut voir l'execution de l'envoie de la commande de reset suivi de la procédure de reconnection oitier SN50v3-LB/LS puis de l'envoie d'une trame de mesure.
+Ou l'on peut voir l'execution de l'envoie de la commande de reset suivi de la procédure de reconnection boitier SN50v3-LB/LS puis de l'envoie d'une trame de mesure.
 
 En complément de cette methode manuel d'envoie de commande il est possible d'utiliser le chirpStack et Node-Red du serveur local recevoir ou commander [voir exemple du wiki](https://wiki.dragino.com/xwiki/bin/view/Main/Notes%20for%20ChirpStack/#H13.A0Example:UseLocalServerChirpStackandNode-RedinLPS8v2)
 
