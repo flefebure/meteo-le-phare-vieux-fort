@@ -66,7 +66,7 @@ On peux surveiller le bon déroulement de l'envoie de la commande et de son exec
 
 Ou l'on peut voir l'execution de l'envoie de la commande de reset suivi de la procédure de reconnection boitier SN50v3-LB/LS puis de l'envoie d'une trame de mesure.
 
-En complément de cette methode manuel d'envoie de commande il est possible d'utiliser le chirpStack et Node-Red du serveur local recevoir ou commander des messages: [voir exemple du wiki](https://wiki.dragino.com/xwiki/bin/view/Main/Notes%20for%20ChirpStack/#H13.A0Example:UseLocalServerChirpStackandNode-RedinLPS8v2)
+En complément de cette methode manuel d'envoie de commande, il est possible d'utiliser le chirpStack et Node-Red au niveau du serveur local pour recevoir ou commander des messages: [voir exemple du wiki](https://wiki.dragino.com/xwiki/bin/view/Main/Notes%20for%20ChirpStack/#H13.A0Example:UseLocalServerChirpStackandNode-RedinLPS8v2)
 
 Enfin le [wiki d'installation et d'utilisation de Node-red](https://wiki.dragino.com/xwiki/bin/view/Main/Node-RED/#H3.A0ImportInputFlowforDraginoSensors)) décrit comment utiliser Node-Red pour programmer l'envoie d'une commande par le Serveur ChirpStack voir: [5.1 How to use Node-Red to schedule downlink to ChirpStack LoRaWAN Server?](https://wiki.dragino.com/xwiki/bin/view/Main/Node-RED/#H5.1HowtouseNode-RedtoscheduledownlinktoChirpStackLoRaWANServer3F)
 
