@@ -34,7 +34,7 @@ Les commandes spécifiques au boitier SN50v3-LB/LS se retrouve dans le manuel ut
  * Configuration [Serveur intégré à la passerelle LoRaWAN LPS8-V2](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20All%20Gateway%20models/HP0C/#H4.Build-inServer)
 
 ## Redémarrage à distance de l'émetteur
-En cas de disfonctionnement le boitier SN50v3-LB/LS il peut être nécessaire d'effectuer un reset du boitier cette commande de reset peut être envoyé avec les 3 méthodes de commande:
+En cas de disfonctionnement le boitier SN50v3-LB/LS, il peut être nécessaire d'effectuer un reset du boitier. Cette commande de reset peut être envoyé avec les 3 méthodes de commande suivantes:
 
 *	Commande AT via la connexion Bluetooth : [BLE Configure Instruction](http://wiki.dragino.com/xwiki/bin/view/Main/BLE%20Bluetooth%20Remote%20Configure/).
 
@@ -44,7 +44,7 @@ En cas de disfonctionnement le boitier SN50v3-LB/LS il peut être nécessaire d'
 
 Une fois installé sur site, seul la dernière méthode est disponible.
 
-Le principe sur comment utiliser les Commandes AT ou les Commandes Downlink sont données dans [le wiki ici](https://wiki.dragino.com/xwiki/bin/view/Main/End%20Device%20AT%20Commands%20and%20Downlink%20Command/#H2.HowtouseATCommandsorDownlinkcommand)
+Le principe d'utilisation des Commandes AT ou des Commandes Downlink sont données dans [le wiki ici](https://wiki.dragino.com/xwiki/bin/view/Main/End%20Device%20AT%20Commands%20and%20Downlink%20Command/#H2.HowtouseATCommandsorDownlinkcommand)
 
 La description de la commande de reset est donnée dans [le wiki ici](https://wiki.dragino.com/xwiki/bin/view/Main/End%20Device%20AT%20Commands%20and%20Downlink%20Command/#H4.2RebootEndNode) et décrite ci dessous:
 
