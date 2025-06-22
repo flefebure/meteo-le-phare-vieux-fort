@@ -60,7 +60,7 @@ remplir les champs comme sur l'image ci dessous
 <img width="652" alt="Capture d’écran 2025-06-22 141024" src="https://github.com/user-attachments/assets/4e0b60fd-d54e-4e3e-ba38-290421b1e0a3" />
 
 Enfin pousser la commande dans la queue d'envoie en cliquant sur "EnQueue". la commande sera envoyé après la prochaine réception d'un uplink par le serveur IoT LoRaWAN ChirpStack car c'est à ce momment que s'ouvre la fenettre de reception des message de commande par le boitier SN50v3-LB/LS.
-On peux surveiller le bon déroulement de l'envoie de la commande et de son execution en allant dans le menu Event:
+On peux surveiller le bon déroulement de l'envoie de la commande et de son execution en allant dans le menu Events:
 
 <img width="696" alt="Capture d’écran 2025-06-22 150352" src="https://github.com/user-attachments/assets/78a2970d-68f1-4ddd-9d28-56a44776c0c6" />
 
