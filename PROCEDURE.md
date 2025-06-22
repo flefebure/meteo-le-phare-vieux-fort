@@ -50,7 +50,7 @@ La description de la commande de reset est donnée dans [le wiki ici](https://wi
 
 ![image](https://github.com/user-attachments/assets/011bfa43-c239-482d-a876-17e7b44364d8)
 
-L'envoie de cette commande sera faite à travers le serveur IoT LoRaWAN ChirpStack installé dans la passerelle Dragino donne une [documentation d'utilisation ici](https://wiki.dragino.com/xwiki/bin/view/Main/Notes%20for%20ChirpStack/)
+L'envoie de cette commande sera faite à travers le serveur IoT LoRaWAN ChirpStack installé dans la passerelle. Dragino donne une [documentation d'utilisation ici](https://wiki.dragino.com/xwiki/bin/view/Main/Notes%20for%20ChirpStack/)
 
 Pour un reset ponctuelle le plus simple est d'utiliser [l'interface utilisateur Web de ChirpStack](https://wiki.dragino.com/xwiki/bin/view/Main/Notes%20for%20ChirpStack/#H8.1ScheduleDownlinkviaWebUI) en ce connectant au serveur [Adresse_IP]:8080
 
