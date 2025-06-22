@@ -17,7 +17,7 @@ Pour configurer le boitier SN50v3-LB/LS plusieurs méthodes de configuration son
 
 *	Par commande radio "LoRaWAN Downlink": [Instruction pour différentes plateformes sur le wiki dragino](http://wiki.dragino.com/xwiki/bin/view/Main/).
 
-Les commandes générales permettent de configurer les paramètres généraaux du système comme l'intervalle de temps de la liaison montante, le protocole radio LoRaWAN, etc. Elles sont communes à tous les boitiers Dragino qui prennent en charge la Stack LoRaWAN DLWS-005.
+Les commandes générales permettent de configurer les paramètres généraux du système comme l'intervalle de temps de la liaison montante, le protocole radio LoRaWAN, etc. Elles sont communes à tous les boitiers Dragino qui prennent en charge la Stack LoRaWAN DLWS-005.
 Ces commandes peuvent être trouvées sur le wiki à la section commande : [Commandes AT et commande Downlink](http://wiki.dragino.com/xwiki/bin/view/Main/End%20Device%20AT%20Commands%20and%20Downlink%20Command/)
 
 Les commandes spécifiques au boitier SN50v3-LB/LS se retrouve dans le manuel utilisateur de l'émetteur à la section : [Commands special design for SN50v3-LB/LS](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20LoRaWAN%20End%20Nodes/SN50v3-LB/#H3.3CommandsspecialdesignforSN50v3-LB2FLS)
