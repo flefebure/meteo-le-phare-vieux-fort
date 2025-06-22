@@ -1,7 +1,9 @@
 # Procédures diverses...
 
 
-Les informations servant a établir les différentes procédures pratiques sont issue de la documentation Dragino:
+Les informations servant a établir les différentes procédures pratiques sont issue de la documentation Dragino et de son [wiki](https://wiki.dragino.com/xwiki/bin/view/Main/)
+
+Pour l'émetteur
 
 Fiche produit de l’émetteur [SN50v3-LB/LS -- Waterproof Long Range Wireless LoRa Sensor Node](https://www.dragino.com/products/lora-lorawan-end-node/item/260-sn50v3-lb-ls.html)
 
@@ -20,6 +22,8 @@ Ces commandes peuvent être trouvées sur le wiki à la section commande : [Comm
 
 Les commandes spécifiques au boitier SN50v3-LB/LS se retrouve dans le manuel utilisateur de l'émetteur à la section : [Commands special design for SN50v3-LB/LS](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20LoRaWAN%20End%20Nodes/SN50v3-LB/#H3.3CommandsspecialdesignforSN50v3-LB2FLS)
 
+ Fiche produit de la Gateway Lora Dragino [LPS8v2 -- Passerelle intérieure LoRaWAN](https://www.dragino.com/products/lora-lorawan-gateway/item/228-lps8v2.html) 
+ Manuel utilisateur dela Gateway Lora Dragino LPS8v2[Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20All%20Gateway%20models/HP0C/)   |
 
 ## Redémarrage à distance de l'émetteur
 
