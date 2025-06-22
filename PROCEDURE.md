@@ -1,7 +1,7 @@
 # Procédures diverses...
 
 
-Les informations servant a établir les différentes procédures pratiques sont issue de la documentation Dragino et de son [wiki](https://wiki.dragino.com/xwiki/bin/view/Main/)
+Les informations servant à établir les différentes procédures pratiques sont issue de la documentation Dragino et de son [wiki](https://wiki.dragino.com/xwiki/bin/view/Main/)
 
 ### Pour l'émetteur
 
@@ -17,7 +17,7 @@ Pour configurer le boitier SN50v3-LB/LS plusieurs méthodes de configuration son
 
 *	Par commande radio "LoRaWAN Downlink": [Instruction pour différentes plateformes sur le wiki dragino](http://wiki.dragino.com/xwiki/bin/view/Main/).
 
-Les commandes générales permettent de configurer les Paramètres général du système comme les intervalle de liaison montante, le protocol radio LoRaWAN, etc. Elles sont commune à tous les boitiers Dragino qui prennent en charge la Stack LoRaWAN DLWS-005.
+Les commandes générales permettent de configurer les paramètres généraaux du système comme l'intervalle de temps de la liaison montante, le protocole radio LoRaWAN, etc. Elles sont communes à tous les boitiers Dragino qui prennent en charge la Stack LoRaWAN DLWS-005.
 Ces commandes peuvent être trouvées sur le wiki à la section commande : [Commandes AT et commande Downlink](http://wiki.dragino.com/xwiki/bin/view/Main/End%20Device%20AT%20Commands%20and%20Downlink%20Command/)
 
 Les commandes spécifiques au boitier SN50v3-LB/LS se retrouve dans le manuel utilisateur de l'émetteur à la section : [Commands special design for SN50v3-LB/LS](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20LoRaWAN%20End%20Nodes/SN50v3-LB/#H3.3CommandsspecialdesignforSN50v3-LB2FLS)
@@ -26,15 +26,15 @@ Les commandes spécifiques au boitier SN50v3-LB/LS se retrouve dans le manuel ut
 
  Fiche produit de la Gateway Lora Dragino : [LPS8v2 -- Passerelle intérieure LoRaWAN](https://www.dragino.com/products/lora-lorawan-gateway/item/228-lps8v2.html)
  
- Manuel utilisateur dela Gateway Lora Dragino LPS8v2 : [Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20All%20Gateway%20models/HP0C/)
+ Manuel utilisateur de la Gateway Lora Dragino LPS8v2 : [Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20All%20Gateway%20models/HP0C/)
 
  Configuration du Serveur intégré par défaut  à la passerelle LoRaWAN LPS8-V2:
- * serveur LoRaWAN pré-installé : [ChirpStack-V4ChirpStack-V4](https://www.chirpstack.io/docs/)
+ * Serveur LoRaWAN pré-installé : [ChirpStack-V4ChirpStack-V4](https://www.chirpstack.io/docs/)
  * Application Server: [Node-Red](https://nodered.org/).
- * configuration [Serveur intégré à la passerelle LoRaWAN LPS8-V2](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20All%20Gateway%20models/HP0C/#H4.Build-inServer)
+ * Configuration [Serveur intégré à la passerelle LoRaWAN LPS8-V2](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20All%20Gateway%20models/HP0C/#H4.Build-inServer)
 
 ## Redémarrage à distance de l'émetteur
-En cas de disfonctionnement le boitier SN50v3-LB/LS il peut être nécessaire d'effectuer un reset du boitier cette commande de reset peut-être envoyé avec les 3 methodes de commande:
+En cas de disfonctionnement le boitier SN50v3-LB/LS il peut être nécessaire d'effectuer un reset du boitier cette commande de reset peut être envoyé avec les 3 méthodes de commande:
 
 *	Commande AT via la connexion Bluetooth : [BLE Configure Instruction](http://wiki.dragino.com/xwiki/bin/view/Main/BLE%20Bluetooth%20Remote%20Configure/).
 
@@ -42,15 +42,15 @@ En cas de disfonctionnement le boitier SN50v3-LB/LS il peut être nécessaire d'
 
 *	Par commande radio "LoRaWAN Downlink": [Instruction pour différentes plateformes sur le wiki dragino](http://wiki.dragino.com/xwiki/bin/view/Main/).
 
-Une fois installé sur site seul la dernière méthode est disponible.
+Une fois installé sur site, seul la dernière méthode est disponible.
 
-le principe sur comment utiliser les Commandes AT ou les Commande Downlink sont données dans [le wiki ici](https://wiki.dragino.com/xwiki/bin/view/Main/End%20Device%20AT%20Commands%20and%20Downlink%20Command/#H2.HowtouseATCommandsorDownlinkcommand)
+Le principe sur comment utiliser les Commandes AT ou les Commandes Downlink sont données dans [le wiki ici](https://wiki.dragino.com/xwiki/bin/view/Main/End%20Device%20AT%20Commands%20and%20Downlink%20Command/#H2.HowtouseATCommandsorDownlinkcommand)
 
-La description de la commande de reset est donné dans [le wiki ici](https://wiki.dragino.com/xwiki/bin/view/Main/End%20Device%20AT%20Commands%20and%20Downlink%20Command/#H4.2RebootEndNode) et décrite ci dessous:
+La description de la commande de reset est donnée dans [le wiki ici](https://wiki.dragino.com/xwiki/bin/view/Main/End%20Device%20AT%20Commands%20and%20Downlink%20Command/#H4.2RebootEndNode) et décrite ci dessous:
 
 ![image](https://github.com/user-attachments/assets/011bfa43-c239-482d-a876-17e7b44364d8)
 
-l'envoie de cette commande sera faite à travers le serveur IoT LoRaWAN ChirpStack installé dans la passerelle Dragino donne une [documentation d'utilisation ici](https://wiki.dragino.com/xwiki/bin/view/Main/Notes%20for%20ChirpStack/)
+L'envoie de cette commande sera faite à travers le serveur IoT LoRaWAN ChirpStack installé dans la passerelle Dragino donne une [documentation d'utilisation ici](https://wiki.dragino.com/xwiki/bin/view/Main/Notes%20for%20ChirpStack/)
 
 Pour un reset ponctuelle le plus simple est d'utiliser [l'interface utilisateur Web de ChirpStack](https://wiki.dragino.com/xwiki/bin/view/Main/Notes%20for%20ChirpStack/#H8.1ScheduleDownlinkviaWebUI) en ce connectant au serveur [Adresse_IP]:8080
 
@@ -66,6 +66,8 @@ On peux surveiller le bon déroulement de l'envoie de la commande et de son exec
 
 Ou l'on peut voir l'execution de l'envoie de la commande de reset suivi de la procédure de reconnection oitier SN50v3-LB/LS puis de l'envoie d'une trame de mesure.
 
-En complément de cette methode manuel d'envoie de commande il est possible de programer l'envoie de commande 
+En complément de cette methode manuel d'envoie de commande il est possible d'utiliser le chirpStack et Node-Red du serveur local recevoir ou commander [voir exemple du wiki](https://wiki.dragino.com/xwiki/bin/view/Main/Notes%20for%20ChirpStack/#H13.A0Example:UseLocalServerChirpStackandNode-RedinLPS8v2)
+
+Enfin le [wiki d'installation et d'utilisation de Node-red](https://wiki.dragino.com/xwiki/bin/view/Main/Node-RED/#H3.A0ImportInputFlowforDraginoSensors)) décrit comment utiliser Node-Red pour programmer avec node-red l'envoie d'une commande par le Serveur ChirpStack voir: [5.1 How to use Node-Red to schedule downlink to ChirpStack LoRaWAN Server?](https://wiki.dragino.com/xwiki/bin/view/Main/Node-RED/#H5.1HowtouseNode-RedtoscheduledownlinktoChirpStackLoRaWANServer3F)
 
 ll
