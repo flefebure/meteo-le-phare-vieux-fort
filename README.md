@@ -78,6 +78,23 @@ NB:
   * [Haut du boitier](medias/boitier%20connexion%20haut.stl)
   * [Bas du boitier](medias/boitier%20connexion%20bas.stl)
 
+La sonde de température est la classique DS18B20:
+
+ * ![image](https://github.com/user-attachments/assets/468c3f95-bc59-4d38-86ae-d59b7660e5e6)
+   
+ celle-ci est installé dans un écran radiatif:
+ 
+  ![image](https://github.com/user-attachments/assets/06044b85-5447-4db7-b85f-332086d3de9e)
+
+L'écran radiatif est imprimé en PETG blanc. Les différents fichiers STL sont disponible ci-dessous :
+  * [Support écran]()
+  * [porte sonde]()
+  * [Aillete intermédiare x4]()
+  * [Ailette supérieur](medias/boitier%20connexion%20bas.stl)
+
+L'ensemble des pieces sont relier/empilé entre elle par 3 vis d3mm*60mm qui ce vis dans l'ailette supérieur (tarauder les troues avant montage)
+
+
 
 ### Paramétrage de l'émetteur
 
