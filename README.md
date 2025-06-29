@@ -115,9 +115,9 @@ Après installation sur un téléphone Android de l'utilitaire dragino "Devices.
 * Définition de la période de transmission en ms : AT+TDC=30000 (30000ms= 30s)
 
 
-### Appairage de la passerelle à l'émetteur
+### Configuration du réseau Lorawann de la passerelle utilisé par l'émetteur
 
-TODO : décrire procédure d'appairage
+La passerelle permet de configurer l'accés à un réseau Lorawann comme par exemple [The Things Network V3](https://www.thethingsnetwork.org/) ou d'utiliser le réseau lorawan local à la passerelle. Dans notre cas nous avons utilisé le réseau local "Chirpstack". les informations de configuration sont à retrouver dans Manuel utilisateur de la Gateway Lora Dragino LPS8v2 : [Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20All%20Gateway%20models/HP0C/)
 
 ## Mise en œuvre logicielle
 
