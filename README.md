@@ -82,17 +82,18 @@ La sonde de température est la classique DS18B20:
 
  * ![image](https://github.com/user-attachments/assets/468c3f95-bc59-4d38-86ae-d59b7660e5e6)
    
- celle-ci est installé dans un écran radiatif:
+ celle-ci est installé dans un écran radiatif qui est une adaptation/mise à l'échelle de [Radiation Shield For Weather Station Temperature/Humidity](https://www.thingiverse.com/thing:1067700):
  
   ![image](https://github.com/user-attachments/assets/06044b85-5447-4db7-b85f-332086d3de9e)
 
 L'écran radiatif est imprimé en PETG blanc. Les différents fichiers STL sont disponible ci-dessous :
-  * [Support écran]()
-  * [porte sonde]()
-  * [Aillete intermédiare x4]()
-  * [Ailette supérieur](medias/boitier%20connexion%20bas.stl)
+  * [Support écran](medias/Rad_Shd_Vert_mount_60%25.stl)
+  * [porte sonde](medias/Rad_Shd_Porte_sonde_60%25.stl)
+  * [Aillete intermédiare x4](medias/Rad_Shd_ailette_60%25.stl)
+  * [Ailette supérieur](medias/Rad_Shd_ailette_superieur_60%25.stl)
+  * [écran radiatif complet monté](medias/Rad_Shd_Vert_mount_complet_V3_60%25.stl)
 
-L'ensemble des pieces sont relier/empilé entre elle par 3 vis d3mm*60mm qui ce vis dans l'ailette supérieur (tarauder les troues avant montage)
+L'ensemble des pieces sont relier/empilé entre elle par 3 vis d3mm*60mm qui se visse dans l'ailette supérieur (tarauder les trous avant montage)
 
 
 
