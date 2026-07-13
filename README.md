@@ -99,13 +99,13 @@ L'ensemble des pieces sont relier/empilé entre elle par 3 vis d3mm*60mm qui se 
 
 ### Paramétrage de l'émetteur
 
-Le boitier émetteur Dragino SN50v3-LB/LS est un boitier multi usage qui demande à être configuré en fonction de l’application et des capteurs qui seront connecté dessus. La documentation propose différent mode : [Mode boitier](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20LoRaWAN%20End%20Nodes/SN50v3-LB/#H2.3.2WorkingModes26SensorData.UplinkviaFPORT3D2)
+Le boitier émetteur Dragino SN50v3-LB/LS est un boitier multi usage qui demande à être configuré en fonction de l’application et des capteurs qui seront connecté dessus. La documentation propose différent mode : [Mode boitier](https://wiki.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/sn50v3-lbsn50v3-ls/#232-working-modes--sensor-data-uplink-via-fport2)
 
 Dans notre cas nous allons utiliser le mode comptage : Mode 6, car nous avons à compter les tours de rotation de l’anémomètre, mesurer le potentiomètre de la girouette et mesurer la température.
 Le boitier SN50v3-LB/LS prend en charge les méthodes de configuration suivante :
-* Commande AT via connexion Bluetooth (recommandée): [BLE Configure Instruction](https://wiki.dragino.com/xwiki/bin/view/Main/BLE%20Bluetooth%20Remote%20Configure/).
-* Commande AT via connexion UART voir : [UART Connection](https://wiki.dragino.com/xwiki/bin/view/Main/UART%20Access%20for%20LoRa%20ST%20v4%20base%20model/#H2.3UARTConnectionforSN50v3basemotherboard).
-* Par liaison descendante LoRaWAN.  Voir instruction : [IoT LoRaWAN Server section](https://wiki.dragino.com/xwiki/bin/view/Main/).
+* Commande AT via connexion Bluetooth (recommandée): [BLE Configure Instruction](https://wiki-old.dragino.com/xwiki/bin/view/Main/BLE%20Bluetooth%20Remote%20Configure/).
+* Commande AT via connexion UART voir : [UART Connection](https://wiki-old.dragino.com/xwiki/bin/view/Main/UART%20Access%20for%20LoRa%20ST%20v4%20base%20model/#H2.3UARTConnectionforSN50v3basemotherboard).
+* Par liaison descendante LoRaWAN.  Voir instruction : [IoT LoRaWAN Server section](https://wiki-old.dragino.com/xwiki/bin/view/Main/).
 
 La méthode « Commande AT via connexion Bluetooth » a été utilisé :
 
@@ -117,7 +117,7 @@ Après installation sur un téléphone Android de l'utilitaire dragino "Devices.
 
 ### Configuration du réseau Lorawann de la passerelle utilisé par l'émetteur
 
-La passerelle permet de configurer l'accés à un réseau Lorawann comme par exemple [The Things Network V3](https://www.thethingsnetwork.org/) ou d'utiliser le réseau lorawan local à la passerelle. Dans notre cas nous avons utilisé le réseau local "Chirpstack". les informations de configuration sont à retrouver dans Manuel utilisateur de la Gateway Lora Dragino LPS8v2 : [Manuel](https://wiki.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20All%20Gateway%20models/HP0C/)
+La passerelle permet de configurer l'accés à un réseau Lorawann comme par exemple [The Things Network V3](https://www.thethingsnetwork.org/) ou d'utiliser le réseau lorawan local à la passerelle. Dans notre cas nous avons utilisé le réseau local "Chirpstack". les informations de configuration sont à retrouver dans Manuel utilisateur de la Gateway Lora Dragino LPS8v2 : [Manuel](https://wiki-old.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20All%20Gateway%20models/HP0C/)
 
 ## Mise en œuvre logicielle
 
