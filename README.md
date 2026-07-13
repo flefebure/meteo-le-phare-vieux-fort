@@ -99,7 +99,7 @@ L'ensemble des pieces sont relier/empilé entre elle par 3 vis d3mm*60mm qui se 
 
 ### Paramétrage de l'émetteur
 
-Le boitier émetteur Dragino SN50v3-LB/LS est un boitier multi usage qui demande à être configuré en fonction de l’application et des capteurs qui seront connecté dessus. La documentation propose différent mode : [Mode boitier](https://wiki.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/sn50v3-lbsn50v3-ls/#232-working-modes--sensor-data-uplink-via-fport2)
+Le boitier émetteur Dragino SN50v3-LB/LS est un boitier multi usage qui demande à être configuré en fonction de l’application et des capteurs qui seront connecté dessus. La documentation propose différent mode : [Mode boitier](https://wiki-old.dragino.com/xwiki/bin/view/Main/User%20Manual%20for%20LoRaWAN%20End%20Nodes/SN50v3-LB/#H2.3.2WorkingModes26SensorData.UplinkviaFPORT3D2)
 
 Dans notre cas nous allons utiliser le mode comptage : Mode 6, car nous avons à compter les tours de rotation de l’anémomètre, mesurer le potentiomètre de la girouette et mesurer la température.
 Le boitier SN50v3-LB/LS prend en charge les méthodes de configuration suivante :
